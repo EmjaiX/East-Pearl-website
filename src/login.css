@@ -1,0 +1,43 @@
+body {
+    margin: o;
+}
+
+
+/* Div atop of the screen to be like a filled bar
+    ex. the blue atop of facebook.com
+*/
+
+.action-bar {}
+
+
+/* Div that holds the form */
+
+.form-box {}
+
+
+/* Form */
+
+.form-box form {}
+
+
+/* Labels for the input boxes(All)*/
+
+label {}
+
+
+/* input text box for password and text(All) */
+
+input[type="text"],
+input[type="password"] {}
+
+
+/* Buttons within the page(All) */
+
+button {}
+
+
+/* Buttons within the page(All) */
+
+button:hover {
+    cursor: pointer;
+}
