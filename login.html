@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Pearl</title>
+    <link rel="stylesheet" href="src/login.css" />
+</head>
+
+<body>
+    <div class="action-bar"><span id="websiteName">East Pearl Online Portal</span></div>
+    <div clas="form-box">
+        <form name="credentials" method="POST" onsubmit ="return validateID()">
+            <label for = "userid">User ID</label>
+            <input type="text" name="userid" id = "userid" />
+            <label for = "password">Password</label>
+            <input type="password" name="password" id "password" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            title ="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <button type="submit" id="login-button">Login</button>
+        </form>
+
+    </div>
+<!--KG-->
+
+        <script>
+function validateID()
+{
+var i = document.forms["credentials"]["userid"].value;
+if (i =="")
+{
+alert("Must have a User ID.");
+return false;
+}
+if (!isNaN (i))
+{
+alert("Please only use characters for the User ID.");
+i.select();
+return false;
+}
+}
+
+        var password = document.getElementById("password");
+        var letter = document.getElementById("letter");
+        var upper = document.getElementById("upper");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
+        
+        password.onkeyup = function()
+          {
+          var lowercaseLetters = /[a-z]/g;
+          if(password.value.match(lowercaseLetters)) 
+          {  
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+          } 
+          else 
+          {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+          }
+          var upperCaseLetters = /[A-Z]/g;
+          if(password.value.match(upperCaseLetters)) 
+          {  
+            upper.classList.remove("invalid");
+            upper.classList.add("valid");
+          } 
+          else 
+          {
+            upper.classList.remove("valid");
+            upper.classList.add("invalid");
+          }
+          var numbers = /[0-9]/g;
+          if(password.value.match(numbers)) 
+          {  
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+          } 
+          else 
+          {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+          }
+	//Hey guys not sure if we really needed this part but most passwords do need a specific size
+          if(password.value.length >= 8) 
+          {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+          } 
+          else 
+          {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+          }
+        }
+       
+
+        </script>
+</body>
+
+</html>
