@@ -29,11 +29,23 @@
     <!--KG-->
 
     <script>
+        function spu_createCookie(name, value, hours) {
+            if (hours) {
+                var date = new Date();
+                date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            } else {
+                var expires = "";
+            }
+
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
         function login() {
             if (validateID()) {
                 event.preventDefault();
                 let form = document.forms["credentials"];
-                let formData = form["userid"] + ";" + form["password"];
+                let formData = form["userid"].value + ";" + form["password"].value;
                 let origin = window.location.hostname == "http://xantech.tk" ? "http://xantech.tk" : "http://192.168.100.145";
                 console.log(origin);
                 fetch(
@@ -47,10 +59,13 @@
                     )
                     .then(response => response.text())
                     .then(data => {
-                        if (data == "true")
-                            console.log("made it");
-                        else {
-                            console.log(data);
+                        if (data.includes("success")) {
+                            spu_createCookie("token", data.split(":")[1], 2);
+                            window.location.href = "Dashboard.html";
+                        } else {
+                            if (data == "failure") {
+                                window.alert("Invalid login!!!");
+                            }
                         }
                     });
             }
