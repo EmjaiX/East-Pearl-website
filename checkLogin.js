@@ -14,7 +14,9 @@ function getCookie(cname) {
 }
 
 let key = getCookie("token");
-if (key == null) {
+
+console.log("login");
+if (key == "") {
     console.log("log out");
 }
 console.log("login");
