@@ -13,10 +13,13 @@ function getCookie(cname) {
     return "";
 }
 
-let key = getCookie("token");
-
-console.log("login");
-if (key == "") {
-    console.log("log out");
+function logout() {
+    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.href = "./login.html";
 }
-console.log("login");
+
+var key = getCookie("token");
+
+if (key == "") {
+    logout();
+}
