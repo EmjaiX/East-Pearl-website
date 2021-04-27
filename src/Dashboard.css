@@ -1,12 +1,11 @@
-@import"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 
 body{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    background: url(file:///Users/user1/Downloads/bgpic.jpeg) no-repeat;
-    
+    font-family: 'Merriweather', serif;
+    background: url(file:///C:/Users/Kelvin/Desktop/epeal/epeal/picture/dashboardbg.jpeg) no-repeat;
     background-size: cover;
+    background-attachment: fixed;
      
 }
 
@@ -30,9 +29,6 @@ div.main {
   }
   /*end of the css for the borer at the top.*/
   
-  body {
-    font-family: "Lato", sans-serif;
-  }
   
   .sidebar {
     height: 100%;
@@ -65,7 +61,11 @@ div.main {
     top: 0;
     right: 25px;
     font-size: 36px;
-    margin-left: 50px;
+    margin-left: -50px;
+  }
+
+  .sidebar.closebtn a:hover{
+    background-color: none;
   }
   
   .openbtn {
@@ -85,3 +85,147 @@ div.main {
     transition: margin-left .5s;
     padding: 16px;
   }
+
+  .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+  }
+
+  .col-2 h1{
+    font-size: 40px;
+    line-height: 60px;
+    margin: 25px 0;
+  }
+  
+  .btn1{
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    text-decoration: none;
+  }
+
+  .small-container{
+    max-width: 1000px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .col-4{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+
+  }
+
+  .col-4 img{
+    width: 100%;
+     
+  }
+
+  .title{
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    
+  }
+
+.title::after{
+  content: ' ';
+  background: #ff523b;
+  width: 80px;
+  border-radius: 5px;
+  position: absolute; 
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h4{
+  font-weight: normal;
+}
+
+.col-4 p{
+  font-size: 14px;
+}
+
+.rating .fa{
+  color: #ff523b;
+
+}
+
+.col-4:hover{
+  transform:translateY(-10px); 
+}
+.offer{
+  margin-top: 80px;
+  padding: 30px 0;
+}
+
+.col-2 .offer-pic{
+  padding: 50px;
+}
+
+.footer{
+  background-color: #000;
+  color:#8a8a8a;
+  font-size: 14px;
+  padding: 60px 0 20px;
+  margin-left: -185px;
+  margin-right: -185px;
+  margin-bottom: -100px;
+  margin-top: 200px;
+}
+
+.footer p{
+  color: #8a8a8a;
+}
+
+.footer h3{
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-col-1 {
+  flex-basis: 30%;
+}
+
+
+.footer-col-2, .footer-col-3, .footer-col-4{
+  flex-basis: 12%;
+   text-align: center;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.footer hr{
+  border: none;
+  background: #b5b5b5;
+  height: 1px;
+  margin: 20px 0;
+}
+
+.rights{
+  text-align: center;
+}
+

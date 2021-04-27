@@ -3,63 +3,259 @@
 <title>EastPearl_dashboard</title>
 
 <head>
+<!--such empty. I honestly don't know what to put here-KG -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="src/Dashboard.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!--such empty. I honestly don't know what to put here-KG -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./src/Dashboard.css" />
 </head>
-<script src="checkLogin.js"></script>
 
 <body>
 
 
-    <div class="main" class="sidebar">
-        <button class="openbtn" onclick="openNav()">☰</button>
-        <a href="#home">Home</a>
-        <a href="#news">News</a>
+    <div class="main" class= "sidebar">
+      <button class="openbtn" onclick="openNav()">☰</button> 
+        <a href="Dashboard.html">Home</a>
+        <a href= "#products">Products</a>
         <a href="#contact">Contact</a>
-
-        <a onclick="return logout()" style="float: right;">Logout</a>
-
-
-    </div>
-
-
-
-    <div id="mySidebar" class="sidebar">
+        <a href="#about">About</a>
+        <a href="checkout.html"><i class="fa fa-shopping-cart"></i></a>
+        
+           <a href="login.html" style="float: right;">Logout</a>          
+      </div>
+      
+      
+      
+      <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a href="#">About</a>
         <a href="#">Services</a>
         <a href="#">Donate</a>
         <a href="#">Suggestions</a>
+      </div>
+      
+      <div id="main">
+
+        <div class="row">
+          <div class="col-2">
+            <h1>Welcome to the East Pearl Site!</h1>
+            <p>Your safety is our number 1 Priority.<br> Precaution is better than cure.</p>
+            <a href="" class="btn1"> Explore Now &#8594;</a>
+          </div>
+
+            
+    <div class="offer">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-2">
+            <img src="picture/safety kit.png" class="offer-pic" width="300" height="300">
+          </div>
+          <div class="col-2">
+            <h1>Normal Kit</h1>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <p>FREE</p>
+
+      
+           <a href="thanks.html" class="btn1">Free Kit &#8594;</a>
+           
+           
+          </div>
+
+        
+    <h2 class="title">ADDITIONAL SUPPLIES</h2>
+        <div class="row">
+          <div class="col-4">
+              <img src="picture/bandaid.jpeg">
+              <h4> Band Aid</h4>
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>FREE</p>
+              <a href="bandaid.html" class="btn1"> Buy Now &#8594;</a>
+          </div>
+      <div class="col-4">
+        <img src="picture/facemask.jpeg">
+        <h4> Face Mask</h4>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>FREE</p>
+        <a href="facemask.html" class="btn1"> Buy Now &#8594;</a>
+      </div>
+    <div class="col-4">
+    <img src="picture/gloves.jpeg" height="250px">
+    <h4> Gloves</h4>
+    <div class="rating">
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
     </div>
-
-    <div id="main">
-
-        <h2>Welcome to the East Pearl Site!!!</h2>
-        <p>In this part you'd be able to navigate to the other areas of the site. This makes for easy access for the most important part of the site. The purpose of the website is to provide you all with safety kits for the hard time we are all experiencing.
-        </p>
+    <p>FREE</p>
+    <a href="gloves.html" class="btn1"> Buy Now &#8594;</a>
     </div>
-
-    <script>
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-    </script>
-
-
+  </div>
+  <div class="row">
+    <div class="col-4">
+        <img src="picture/sanatizer.jpg" height="250px">
+        <h4> Hand Sanatizer</h4>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>FREE</p>
+        <a href="sanitizer.html" class="btn1"> Buy Now &#8594;</a>
+    </div>
+<div class="col-4">
+  <img src="picture/wipes.jpeg">
+  <h4> Clorox Wipes</h4>
+  <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+  </div>
+  <p>FREE</p>
+  <a href="wipes.html" class="btn1"> Buy Now &#8594;</a>
+</div>
+<div class="col-4">
+<img src="picture/shield.jpeg">
+<h4> Face Shield</h4>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<p>FREE</p>
+<a href="shield.html" class="btn1"> Buy Now &#8594;</a>
+</div>
+<div class="col-4">
+  <img src="picture/spray.jpeg">
+  <h4> Lysol Spray</h4>
+  <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+  </div>
+  <p>FREE</p>
+  <a href="spray.html" class="btn1"> Buy Now &#8594;</a>
+</div>
+<div class="col-4">
+  <img src="picture/handwash.jpeg">
+  <h4> Antibacterial Handwash</h4>
+  <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+  </div>
+  <p>FREE</p>
+  <a href="handwash.html" class="btn1"> Buy Now &#8594;</a>
+</div>
+<div class="col-4">
+  <img src="picture/bodywash.jpg">
+  <h4> Antibacterial Body wash</h4>
+  <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+  </div>
+  <p>FREE</p>
+  <a href="bodywash.html" class="btn1"> Buy Now &#8594;</a>
+</div>
+</div>
+<div class="offer">
+  <div class="small-container">
+    <div class="row">
+      <div class="col-2">
+        <img src="picture/mysterykit.jpeg" class="offer-pic" width="300" height="300">
+      </div>
+      <div class="col-2">
+        <p>Limited time offer on special COVID-19 kit</p>
+        <h1>SPECIAL KIT</h1>
+        <small>This kit is a limited kit that comes with 3 additional safety porducts within it. It's only available form May 1st 2021 until May 31st 2021.
+        </small>
+        <a href="mystery.html" class="btn1">Buy Now &#8594;</a>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+  <div class="row">
+     <div class="footer-col-1">
+       <img src="picture/wecare.png" height="100">
+       <p> Let's do our part to keep our community SAFE and COVID FREE.</p>
+     </div>
+     <div class="footer-col-2">
+      <h3>Useful Links</h3>
+      <ul>
+        <li>Return Policy</li>
+        <li>How to order</li>
+        <li>Blog Post</li>
+      </ul>
+    </div>
+    <div class="footer-col-3">
+      <h3>Follow Us</h3>
+      <ul>
+        <li>Facebook</li>
+        <li>Twitter</li>
+        <li>Instagram</li>
+      </ul>
+    </div>
+    <div class="footer-col-4">
+      <h3>Contact Us</h3>
+      <ul>
+        <li>+1(501)614-2333</li>
+        <li>+1(501)610-2390</li>
+        <li>+1(501)623-2323</li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  <hr>
+    <p class="rights">Copyright 2021-Oline website</p> 
+</div>
+</div>
+      <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+      }
+      </script>
 
 </body>
-
-
-
-
-
-
-</html>
+</html> 
