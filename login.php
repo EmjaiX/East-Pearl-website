@@ -4,22 +4,19 @@ header("Access-Control-Allow-Origin: *");
 $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 
 if ($contentType === "text/plain") {
-  //Receive the RAW post data.
-  $content = trim(file_get_contents("php://input"));
-  $content = explode(";",$content);
-  
-  include("db.php");
-    $query = "SELECT * FROM Links WHERE Active=1;";
+    //Receive the RAW post data.
+    $content = trim(file_get_contents("php://input"));
+    $content = explode(";",$content);
+    
+    include("dp.php");
+    $query = "SELECT token FROM Users WHERE username='".$content[0]."' and password='".$content[1]."';";
     $result = $conn->query($query);
     if ($result) {
         while($row = mysqli_fetch_array($result)) {
-            $row["Active"]    
+            exit("success:".$row["token"]);
             }
     }
-  exit(gettype($content));
-  if($content!=null) {
-    exit("temporal success");
-  }
+    exit("failure");
 }
-exit("some error");
+header("Location: ./index.html");
 ?>
