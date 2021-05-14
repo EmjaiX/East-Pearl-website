@@ -1,7 +1,6 @@
 <?php
 header("Content-Type: text/plain");
-header("Access-Control-Allow-Origin: http://127.0.0.1:5500");
-
+// header("Access-Control-Allow-Origin: http://127.0.0.1:5500");
 
 $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 if ($contentType === "text/plain") {
@@ -43,7 +42,7 @@ if ($contentType === "text/plain") {
 		}
 		exit("'result': 0");
 	 }else if($content == "customers"){
-		 include("dp.php");
+		include("dp.php");
 		$query = "SELECT * FROM customer_user;";
         $result = $conn->query($query); 
         $response = [];
@@ -61,18 +60,51 @@ if ($contentType === "text/plain") {
 			exit(json_encode($response));
 		}
 		exit("'result': 0");
-	 }else if($content == "locations"){
-	 }else if($content == "locations"){
-	 }
-   } else {
-        exit("Failure");
-    }
-exit();
-}elseif($contentType === "application/json"){
-    $content = trim(file_get_contents("php://input"));
-    $content = json_decode($content,true);
-    if($content["request"]=="stock"){}
+	 }else {
+		$content = explode(":",$content);
+		 if($content[0] == "item"){
+			include("dp.php");
+			$query = "SELECT * FROM inventory where ID = ".$content[1].";";
+			$result = $conn->query($query);
+			$i = 0;
+			$response = "";
+			if ($result->num_rows > 0) {
+				//output data of each row
+				while($row = $result->fetch_assoc()) {
+					$response.= $row["ID"] .":". $row["item"] .":".$row["description"] .":". $row["quantity"] .":".$row["cost"] .";";	
+				}
+				exit($response);
+			}else if($content[0] == "search"){
+				include("dp.php");
+				if($content[1] == ""){
+					$query = "SELECT * FROM inventory";
+				}
+				else{
+					$query = "SELECT * FROM inventory where item like '%".$content[1]."%';";
+				}
+				exit("hello");
+				$result = $conn->query($query);
+				
+				$response = "";
+				if ($result->num_rows > 0) {
+					//output data of each row
+					while($row = $result->fetch_assoc()) {
+						$response.= $row["ID"] .":". $row["item"] .":".$row["description"] .":". $row["quantity"] .":".$row["cost"] .";";	
+					}
+					exit($response);
+				}
+			exit("'result': 0");
+		 	}else {
+			exit("Failure");
+			}
+	 	}
+   	} 
+	exit("Failure");
+}else if($contentType === "application/json"){
+    // $content = trim(file_get_contents("php://input"));
+    // $content = json_decode($content,true);
+    // if($content["request"]=="stock"){}
     exit("soon");
-}
+}}
 exit("Failure");
 ?>

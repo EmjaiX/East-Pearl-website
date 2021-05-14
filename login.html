@@ -45,10 +45,8 @@
                 event.preventDefault();
                 let form = document.forms["credentials"];
                 let formData = form["userid"].value + ";" + form["password"].value;
-                let origin = window.location.hostname == "http://xantech.tk" ? "http://xantech.tk" : "http://192.168.100.145";
-                console.log(origin);
                 fetch(
-                        origin + "/East-Pearl-website/login.php", {
+                        "login.php", {
                             method: 'POST', // *GET, POST, PUT, DELETE, etc.
                             headers: {
                                 'Content-Type': 'text/plain'

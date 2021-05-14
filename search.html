@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/Dashboard.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./src/main.css">
+
+    <script src="./checkLogin.js"></script>
+    <script src="./src/functions.js"></script>
+    <title>SEARCH</title>
+
+</head>
+
+<body>
+    <div class="main" class="sidebar">
+        <button class="openbtn" onclick="openNav()">☰</button>
+        <a href="Dashboard.html">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="checkout.html"><i class="fa fa-shopping-cart"></i></a>
+
+
+        <a href="login.html" style="float: right;">Logout</a>
+    </div>
+
+
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Donate</a>
+        <a href="#">Suggestions</a>
+    </div>
+
+    <div id="page">
+        <div class="row">
+            <div class="col-4">
+                <img id="image">
+                <h4 id="name"> </h4>
+
+                <p id="cost">FREE</p>
+                <a href="checkout.html" class="btn1" onclick="viewItem()"> View Item &#8594;</a>
+                <a href="checkout.html" class="btn1" onclick="sendToCart()"> Buy Now &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+<script>
+    let id = findGetParameter("search");
+    id = "search:" + id;
+    let page = document.querySelector("#page");
+
+    fetch(
+            "server.php", {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    'Content-Type': 'text/plain'
+                },
+                body: id
+            }
+        )
+        .then(response => response.text())
+        .then(data => {
+            item = data.split(";");
+            item.forEach((data) => {
+                console.log(data);
+                let div = document.createElement("div");
+                div.className = "row";
+                let div1 = document.createElement("div");
+                div1.className = "col-4";
+                let img = document.createElement("img");
+                let name = document.createElement("h4");
+                name.id = "name";
+                name.innerText = data[1];
+                let cost = document.createElement("p");
+                cost.id = "cost";
+                cost.innerText = "$" + data[4];
+                let viewButton = document.createElement("a");
+                viewButton.href = "checkout.html";
+                viewButton.className = "btn1";
+                // viewButton.onclick = viewItem(data[0]);
+                viewButton.innerHTML = "View Item &#8594;";
+                let sendButton = document.createElement("a");
+                sendButton.href = "checkout.html";
+                sendButton.className = "btn1";
+                // sendButton.onclick = sendToCart(data[0]);
+                sendButton.innerHTML = "Buy Now &#8594;";
+
+                div1.appendChild(img);
+                div1.appendChild(name);
+                div1.appendChild(cost);
+                div1.appendChild(viewButton);
+                div1.appendChild(sendButton);
+                div.appendChild(div1);
+
+                page.appendChild(div);
+                //   = item[1];
+
+            });
+        });
+</script>
+
+
+</html>
